@@ -31,20 +31,9 @@ app.use(helmet({
   contentSecurityPolicy: false
 }));
 
-const allowedOrigins = [
-  "http://localhost:5173",
-  "http://127.0.0.1:5173",
-  ...(process.env.CORS_ORIGINS ? process.env.CORS_ORIGINS.split(",") : [])
-];
-
+// Allow all valid incoming web origins dynamically with credentials
 app.use(cors({
-  origin: (origin, callback) => {
-    if (!origin || allowedOrigins.includes(origin) || process.env.NODE_ENV !== "production") {
-      callback(null, true);
-    } else {
-      callback(new Error("Not allowed by CORS"));
-    }
-  },
+  origin: true,
   credentials: true
 }));
 
@@ -96,10 +85,10 @@ async function startServer() {
     await initDb();
     app.listen(PORT, () => {
       console.log(`=======================================================`);
-      console.log(`ðŸš€ FreeDomain API Server is running on port ${PORT}`);
-      console.log(`ðŸ“Š Mode: Subsidized Domain Grant Engine (No Ads)`);
-      console.log(`ðŸ—„ï¸ Database Backend: ${getDbType().toUpperCase()}`);
-      console.log(`ðŸŒ Health endpoint: http://localhost:${PORT}/api/health`);
+      console.log(`Ã°Å¸Å¡â‚¬ FreeDomain API Server is running on port ${PORT}`);
+      console.log(`Ã°Å¸â€œÅ  Mode: Subsidized Domain Grant Engine (No Ads)`);
+      console.log(`Ã°Å¸â€”â€žÃ¯Â¸Â Database Backend: ${getDbType().toUpperCase()}`);
+      console.log(`Ã°Å¸Å’Â Health endpoint: http://localhost:${PORT}/api/health`);
       console.log(`=======================================================`);
     });
   } catch (err) {
