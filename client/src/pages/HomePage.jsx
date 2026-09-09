@@ -69,7 +69,7 @@ export function HomePage({ onOpenAuth, onNavigateDashboard }) {
           <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-slate-900 border border-slate-800 text-xs font-semibold text-slate-300 shadow-sm">
             <span className="flex h-2 w-2 rounded-full bg-emerald-400 animate-ping"></span>
             <span className="text-emerald-400 font-bold">100% Ad-Free</span>
-            <span className="text-slate-600">â€¢</span>
+            <span className="text-slate-600">Ã¢â‚¬Â¢</span>
             <span>Genuine .com & .in Subsidies</span>
           </div>
 
@@ -77,7 +77,7 @@ export function HomePage({ onOpenAuth, onNavigateDashboard }) {
           <h1 className="text-4xl sm:text-6xl font-black text-white tracking-tight leading-[1.15]">
             Claim Your Digital Identity for{" "}
             <span className="bg-gradient-to-r from-emerald-400 via-teal-300 to-emerald-500 bg-clip-text text-transparent">
-              â‚¹0
+              Ã¢â€šÂ¹0
             </span>
             .
           </h1>
@@ -113,20 +113,20 @@ export function HomePage({ onOpenAuth, onNavigateDashboard }) {
             <span className="text-xs font-bold uppercase tracking-widest text-emerald-400">Live Grant Pool</span>
             <h2 className="text-2xl sm:text-3xl font-black text-white mt-1">Platform Subsidy Transparency</h2>
             <p className="text-xs text-slate-400 max-w-lg mx-auto mt-1">
-              We never display ads, sell user data, or inject parking links. Every â‚¹0 domain is funded directly from our community grant fund.
+              We never display ads, sell user data, or inject parking links. Every Ã¢â€šÂ¹0 domain is funded directly from our community grant fund.
             </p>
           </div>
 
           <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 max-w-4xl mx-auto">
             <div className="p-6 rounded-2xl bg-slate-900/80 border border-slate-800 text-center">
               <span className="text-xs text-slate-400 font-medium">Initial Platform Grant Pool</span>
-              <div className="text-3xl font-black text-white mt-1">â‚¹{grantStats.totalPool.toLocaleString()}</div>
+              <div className="text-3xl font-black text-white mt-1">Ã¢â€šÂ¹{grantStats.totalPool.toLocaleString()}</div>
               <span className="text-[11px] text-emerald-400 mt-1 block">Committed for Subsidies</span>
             </div>
 
             <div className="p-6 rounded-2xl bg-slate-900/80 border border-emerald-500/30 text-center shadow-lg shadow-emerald-950/20">
               <span className="text-xs text-emerald-400 font-medium">Available Grant Reserve</span>
-              <div className="text-3xl font-black text-emerald-400 mt-1">â‚¹{grantStats.remaining.toLocaleString()}</div>
+              <div className="text-3xl font-black text-emerald-400 mt-1">Ã¢â€šÂ¹{grantStats.remaining.toLocaleString()}</div>
               <span className="text-[11px] text-slate-400 mt-1 block">Ready for Instant Allocation</span>
             </div>
 
@@ -144,7 +144,7 @@ export function HomePage({ onOpenAuth, onNavigateDashboard }) {
         <div className="max-w-7xl mx-auto">
           <div className="text-center mb-12">
             <span className="text-xs font-bold uppercase tracking-widest text-emerald-400">Step-by-Step</span>
-            <h2 className="text-3xl font-black text-white mt-1">How Does the â‚¹0 Subsidy Work?</h2>
+            <h2 className="text-3xl font-black text-white mt-1">How Does the Ã¢â€šÂ¹0 Subsidy Work?</h2>
             <p className="text-xs text-slate-400 max-w-lg mx-auto mt-1">
               Zero catch, zero hidden fees, and zero ads. Here is how your domain is requested and delivered.
             </p>
@@ -201,7 +201,7 @@ export function HomePage({ onOpenAuth, onNavigateDashboard }) {
         <div className="max-w-7xl mx-auto">
           <div className="text-center mb-12">
             <span className="text-xs font-bold uppercase tracking-widest text-emerald-400">Eligibility & Fair Use</span>
-            <h2 className="text-3xl font-black text-white mt-1">Who Can Receive a â‚¹0 Subsidy?</h2>
+            <h2 className="text-3xl font-black text-white mt-1">Who Can Receive a Ã¢â€šÂ¹0 Subsidy?</h2>
             <p className="text-xs text-slate-400 max-w-lg mx-auto mt-1">
               To prevent domain squatting and abuse, grants are approved for legitimate initiative categories.
             </p>
@@ -284,7 +284,7 @@ export function HomePage({ onOpenAuth, onNavigateDashboard }) {
             <div className="p-5 rounded-xl bg-slate-900/60 border border-slate-800 space-y-2">
               <h4 className="font-bold text-sm text-white">What happens at the end of the 1-year subsidized period?</h4>
               <p className="text-slate-400 leading-relaxed">
-                Your domain is registered with a legitimate registrar. At the end of the 1st subsidized year, you can renew it at the registrarâ€™s wholesale cost without markup, or transfer it out freely to any registrar of your choice using your EPP authorization code.
+                Your domain is registered with a legitimate registrar. At the end of the 1st subsidized year, you can renew it at the registrarÃ¢â‚¬â„¢s wholesale cost without markup, or transfer it out freely to any registrar of your choice using your EPP authorization code.
               </p>
             </div>
 
