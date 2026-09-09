@@ -1,0 +1,50 @@
+version: "3.8"
+
+services:
+  db:
+    image: mysql:8.0
+    container_name: freedomain-mysql
+    restart: always
+    environment:
+      MYSQL_ROOT_PASSWORD: root_secret_password
+      MYSQL_DATABASE: freedomain_db
+      MYSQL_USER: freedomain_user
+      MYSQL_PASSWORD: freedomain_secure_password
+    ports:
+      - "3306:3306"
+    volumes:
+      - mysql_data:/var/lib/mysql
+    healthcheck:
+      test: ["CMD", "mysqladmin", "ping", "-h", "localhost"]
+      timeout: 5s
+      retries: 10
+
+  app:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: freedomain-app
+    restart: always
+    depends_on:
+      db:
+        condition: service_healthy
+    ports:
+      - "5000:5000"
+    environment:
+      NODE_ENV: production
+      PORT: 5000
+      JWT_SECRET: replace-with-a-random-64-character-secret-key
+      DB_HOST: db
+      DB_PORT: 3306
+      DB_USER: freedomain_user
+      DB_PASSWORD: freedomain_secure_password
+      DB_NAME: freedomain_db
+      ADMIN_EMAIL: admin@freedomain.org
+      ADMIN_PASSWORD: Admin@Production2026!
+      REGISTRAR_PROVIDER: resellerclub
+      REGISTRAR_SANDBOX: "true"
+      RESELLERCLUB_USER_ID: ""
+      RESELLERCLUB_API_KEY: ""
+
+volumes:
+  mysql_data:

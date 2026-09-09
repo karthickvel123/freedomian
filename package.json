@@ -1,0 +1,13 @@
+{
+  "name": "freedomain-platform-root",
+  "version": "1.0.0",
+  "description": "Full-Stack FreeDomain Platform — 100% Subsidized .com and .in Domains (No Ads)",
+  "private": true,
+  "scripts": {
+    "setup": "npm --prefix server install && npm --prefix client install",
+    "dev:server": "npm --prefix server run dev",
+    "dev:client": "npm --prefix client run dev",
+    "build:client": "npm --prefix client run build",
+    "start": "npm --prefix server start"
+  }
+}
