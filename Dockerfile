@@ -5,7 +5,7 @@ WORKDIR /app
 
 # Build client
 COPY client/package*.json ./client/
-RUN cd client && npm ci
+RUN cd client && npm install
 
 COPY client/ ./client/
 RUN cd client && npm run build
@@ -18,7 +18,7 @@ ENV NODE_ENV=production
 ENV PORT=5000
 
 COPY server/package*.json ./server/
-RUN cd server && npm ci --only=production
+RUN cd server && npm install --omit=dev
 
 COPY server/ ./server/
 COPY --from=builder /app/client/dist ./client/dist
