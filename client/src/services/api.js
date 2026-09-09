@@ -40,6 +40,7 @@ export const api = {
   searchDomain: (query, tld = "com") => apiRequest(`/domains/search?query=${encodeURIComponent(query)}&tld=${encodeURIComponent(tld)}`),
 
   // Subsidy
+  getPublicPool: () => apiRequest("/subsidy/pool"),
   applySubsidy: (body) => apiRequest("/subsidy/apply", { method: "POST", body: JSON.stringify(body) }),
   getMyRequests: () => apiRequest("/subsidy/my-requests"),
 

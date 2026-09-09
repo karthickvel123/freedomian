@@ -71,7 +71,7 @@ router.post("/apply", authenticateToken, subsidyLimiter, enforceUserSubsidyQuota
       [
         auditId,
         req.user.id,
-        `Applied for ₹0 subsidy on domain: ${validation.cleanName}.${validation.cleanTld}`,
+        `Applied for â‚¹0 subsidy on domain: ${validation.cleanName}.${validation.cleanTld}`,
         req.ip || "unknown"
       ]
     );
@@ -96,6 +96,25 @@ router.get("/my-requests", authenticateToken, async (req, res) => {
   } catch (err) {
     console.error("[Subsidy] Fetch my requests error:", err);
     res.status(500).json({ error: "Failed to retrieve your subsidy applications." });
+  }
+});
+
+router.get("/pool", async (req, res) => {
+  try {
+    const budgetRows = await query("SELECT * FROM platform_budget WHERE id = 1");
+    const budget = budgetRows?.[0] || {
+      total_grant_pool_inr: 100000,
+      total_spent_inr: 0,
+      active_subsidies_count: 0
+    };
+    res.json({
+      totalPool: Number(budget.total_grant_pool_inr),
+      totalSpent: Number(budget.total_spent_inr),
+      remaining: Math.max(0, Number(budget.total_grant_pool_inr) - Number(budget.total_spent_inr)),
+      activeCount: Number(budget.active_subsidies_count)
+    });
+  } catch (err) {
+    res.json({ totalPool: 100000, totalSpent: 0, remaining: 100000, activeCount: 0 });
   }
 });
 

@@ -3,6 +3,7 @@ import cors from "cors";
 import helmet from "helmet";
 import cookieParser from "cookie-parser";
 import dotenv from "dotenv";
+import compression from "compression";
 import path from "path";
 import fs from "fs";
 import { fileURLToPath } from "url";
@@ -21,6 +22,7 @@ const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
 
 const app = express();
+app.use(compression());
 const PORT = process.env.PORT || 5000;
 
 // Security and utility middleware
@@ -94,10 +96,10 @@ async function startServer() {
     await initDb();
     app.listen(PORT, () => {
       console.log(`=======================================================`);
-      console.log(`🚀 FreeDomain API Server is running on port ${PORT}`);
-      console.log(`📊 Mode: Subsidized Domain Grant Engine (No Ads)`);
-      console.log(`🗄️ Database Backend: ${getDbType().toUpperCase()}`);
-      console.log(`🌐 Health endpoint: http://localhost:${PORT}/api/health`);
+      console.log(`ðŸš€ FreeDomain API Server is running on port ${PORT}`);
+      console.log(`ðŸ“Š Mode: Subsidized Domain Grant Engine (No Ads)`);
+      console.log(`ðŸ—„ï¸ Database Backend: ${getDbType().toUpperCase()}`);
+      console.log(`ðŸŒ Health endpoint: http://localhost:${PORT}/api/health`);
       console.log(`=======================================================`);
     });
   } catch (err) {
